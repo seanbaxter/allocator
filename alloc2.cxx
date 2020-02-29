@@ -24,6 +24,6 @@ int main() {
     const int terms[] { 1, 2, 3, 4, 5 };
     std::list my_list3 { terms...[:] ..., terms...[::-1] ...} using logger;
     puts(@type_string(decltype(my_list3)));
-    printf("%d\n", my_list3[:])...;
+    printf("%d ", my_list3[:])...; printf("\n");
   }
 }

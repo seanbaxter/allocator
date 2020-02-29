@@ -1,4 +1,4 @@
-// allocator-specifier in initializers and postfix-exrpessions
+// allocator-specifier in initializers and postfix-expressions
 
 #include <list>
 #include "logger.hxx"
