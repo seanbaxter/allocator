@@ -119,7 +119,9 @@ dealloc 40 bytes at 0xb2e460
 dealloc 40 bytes at 0xb2e3a0
 ```
 
-The 
+The _allocator-specifier_ first constructs the `std::vector` that forms the result object of the list comprehension by selecting the one-parameter explicit allocator constructor. If the left-hand side cannot be initialized with the vector result object, the vector is materialized to an xvalue and its data serves as backing store for an `std::initializer_list`, which forms the first argument for initialization of the left-hand type. If the left-hand type is allocator aware (meaning the class or class template holds an `allocator_type` typedef), the `get_allocator` member function on the materialized list comprehension vector is invoked, and the result object of that is passed to the initializer for the left-hand type, thereby passing an allocator from the specifier on the list comprehension, through the `std::vector` backing store, and into the initialized type via `get_allocator`.
+
+Note that the 26 byte allocation expries at the end of the full expression of the `std::set` initializer, prior to the `printf`. If the left-hand type was a vector or a reference to vector the list comprehension result object's lifetime would be extended to match that object.
 
 ## Array initializers.
 
