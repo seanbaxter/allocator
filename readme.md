@@ -123,7 +123,7 @@ The _allocator-specifier_ first constructs the `std::vector` that forms the resu
 
 Note that the 26 byte allocation expries at the end of the full expression of the `std::set` initializer, prior to the `printf`. If the left-hand type was a vector or a reference to vector the list comprehension result object's lifetime would be extended to match that object.
 
-## Array initializers.
+## 4. Array initializers.
 
 [**alloc4.cxx**](alloc4.cxx)
 ```cpp
@@ -179,7 +179,7 @@ dealloc 64 bytes at 0x10772f0
 
 The _allocator-specifier_ supports deep initialization of array declarations of any dimension. Normally when no initializer is provided for an element, the default constructor/zero initializer is selected for that element. When an _allocator-specifier_ is provided, the allocator argument is passed to the one-parameter explicit constructor. When an initializer is provided, the allocator is appended as an additional argument to the constructor.
 
-## Aggregate class initializers.
+## 5. Aggregate class initializers.
 
 [**alloc5.cxx**](alloc5.cxx)
 ```cpp
@@ -248,7 +248,7 @@ This example uses uniform initialization with an _allocator-specifier_ to call t
 
 Notice that the logging allocator even applies to the `pmr::string` key of the `pmr::set`; the allocator logs a 25 byte allocation for that string's storage. (Short string optimization is used for the other keys.)
 
-# Constructor subobject initializers.
+# 6. Constructor subobject initializers.
 
 [**alloc6.cxx**](alloc6.cxx)
 ```cpp
