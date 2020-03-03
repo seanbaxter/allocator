@@ -5,13 +5,14 @@ struct object_t {
   typedef pmr::polymorphic_allocator<int> allocator_type;
 
   object_t() = default;
-  object_t(const allocator_type& alloc) = default; 
-
   object_t(const object_t& rhs) = default;
-  object_t(const object_t& rhs, const allocator_type& alloc) = default;
-
   object_t(object_t&& rhs) = default;
+
+  // Allocator special member functions.
+  object_t(const allocator_type& alloc) = default; 
+  object_t(const object_t& rhs, const allocator_type& alloc) = default;
   object_t(object_t&& rhs, const allocator_type& alloc) = default;
+  allocator_type get_allocator() const = default;
 
   pmr::list<int> x;
 };
@@ -26,4 +27,8 @@ int main() {
 
   // Use move-alloc ctor.
   object_t obj2 = { std::move(obj1) } using logger2;
+
+  // Print the resource associatied with obj2.
+  printf("obj2.resource = %p\n", obj2.get_allocator().resource());
+  printf("&logger2 = %p\n", &logger2);
 }
