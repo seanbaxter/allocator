@@ -1,6 +1,7 @@
 #include <list>
 #include <string>
 #include <array>
+#include <iostream>
 #include "logger.hxx"
 
 struct agg_t {
@@ -18,6 +19,9 @@ struct agg_t {
 
 @meta printf("__is_allocator_aware(std::string) = %d\n", 
   __is_allocator_aware(std::string));
+
+@meta printf("__is_allocator_aware(double) = %d\n", 
+  __is_allocator_aware(double));
 
 @meta printf("__is_allocator_aware(agg_t) = %d\n", 
   __is_allocator_aware(agg_t));
