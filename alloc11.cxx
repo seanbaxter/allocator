@@ -9,7 +9,7 @@ struct object_t {
 
   typedef pmr::polymorphic_allocator<int> allocator_type;
 
-  // By ommision, a is implicitly default-constructed with alloc-ctor.
+  // By omission, a is implicitly default-constructed with alloc-ctor.
   // b is explicitly constructed using its default constructor.
   object_t(int x, int y, int z, 
     const allocator_type& alloc = allocator_type()) :
