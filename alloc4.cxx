@@ -3,7 +3,7 @@
 #include "logger.hxx"
 
 int main() {
-  logging_resource_t logger;
+  logging_resource_t logger("logger");
 
   {  
     // Constructs all 4 array elements with the explicit allocator ctor.

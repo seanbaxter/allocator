@@ -6,3 +6,4 @@ circle alloc4.cxx && ./alloc4
 circle alloc5.cxx && ./alloc5
 circle alloc6.cxx && ./alloc6
 circle alloc7.cxx && ./alloc7
+circle alloc8.cxx && ./alloc8

@@ -17,7 +17,7 @@ struct foo_t {
 };
 
 int main() {
-  logging_resource_t logger;
+  logging_resource_t logger("logger");
 
   foo_t obj {
     // Initialize the vector

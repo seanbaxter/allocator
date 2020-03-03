@@ -6,7 +6,7 @@
 #include "logger.hxx"
 
 int main() {
-  logging_resource_t logger;
+  logging_resource_t logger("logger");
 
   std::string s = "Hello World A Set Of Chars";
   std::set unique_chars = [(char)tolower(s[:])...] using logger;

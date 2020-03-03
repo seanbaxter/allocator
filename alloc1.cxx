@@ -4,7 +4,7 @@
 #include "logger.hxx"
 
 int main() {
-  logging_resource_t logger;
+  logging_resource_t logger("logger");
 
   // using-allocator in a braced initializer for a declaration.
   // creates a PMR list when the allocator expression derives memory_resource.

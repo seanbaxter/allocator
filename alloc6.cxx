@@ -20,7 +20,7 @@ struct foo_t {
 };
 
 int main() {
-  logging_resource_t logger;
+  logging_resource_t logger("logger");
 
   {
     // Initialize a non-aggregate object with a ctor.
