@@ -1,6 +1,7 @@
 #include <list>
 #include <string>
 #include <array>
+#include <type_traits>
 #include <iostream>
 #include "logger.hxx"
 
@@ -9,6 +10,10 @@ struct agg_t {
   pmr::list<float> b;
 };
 
+@meta printf("is agg = %d\n", std::is_aggregate_v<agg_t>);
+
+
+
 // Implicit allocator_type declaration uses the allocator_type of the
 // first subobject.
 @meta printf("agg_t::allocator_type = %s\n", 
@@ -16,6 +21,9 @@ struct agg_t {
 
 @meta printf("__is_allocator_aware(std::array<int, 5>) = %d\n", 
   __is_allocator_aware(std::array<int, 5>));
+
+@meta printf("__is_allocator_aware(std::array<std::string, 5>) = %d\n", 
+  __is_allocator_aware(std::array<std::string, 5>));
 
 @meta printf("__is_allocator_aware(std::string) = %d\n", 
   __is_allocator_aware(std::string));

@@ -9,7 +9,7 @@ static_assert(__is_allocator_automatic(obj2_t) == true);
 
 int main() {
   logging_resource2_t res("logger1");
-  printf("default = %p, res = %p\n", pmr::get_default_resource(), &res1);
+  printf("default = %p, res = %p\n", pmr::get_default_resource(), &res);
 
   obj2_t obj { { 1, 2, 3 } } using res;
   printf("obj.resource = %p\n", obj.get_allocator().resource());

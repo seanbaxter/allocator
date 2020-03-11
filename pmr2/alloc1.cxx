@@ -24,13 +24,13 @@ int main() {
     logging_resource_t res1("logger1");
     obj1_t obj { { 1, 2, 3 } } using res1;
 
-    // auto obj2 = { obj } using res1;
+    // obj1_t obj2 = { obj } using res1;
   }
 
   {
-    logging_resource2_t res2("logger1");
+    logging_resource2_t res2("logger2");
     obj2_t obj { { 1, 2, 3 } } using res2;
 
-    auto obj2 = { obj } using res2;
+    obj2_t obj2 = { obj } using res2;
   }
 }

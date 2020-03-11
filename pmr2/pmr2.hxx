@@ -16,12 +16,6 @@ namespace pmr2 {
   class polymorphic_allocator : public std::pmr::polymorphic_allocator<type_t> {
     using std::pmr::polymorphic_allocator<type_t>::polymorphic_allocator;
 
-    polymorphic_allocator(const polymorphic_allocator& rhs) :
-      pmr::polymorphic_allocator<type_t>(rhs.resource()) { }
-
-    polymorphic_allocator(polymorphic_allocator&& rhs) :
-      pmr::polymorphic_allocator<type_t>(rhs.resource()) { }
-
     enum { allocator_automatic };
   };
 
